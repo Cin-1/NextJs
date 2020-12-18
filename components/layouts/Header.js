@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import Buscar from "../ui/Buscar";
 import Nav from "./Nav";
 import Link from "next/link";
+import { css } from "@emotion/react";
+import Boton from "../ui/Boton";
 
 const ContenedorHeader = styled.div`
   max-width: 1200px;
@@ -17,28 +19,72 @@ const ContenedorHeader = styled.div`
 const Logo = styled.a`
   color: var(--naranja);
   font-size: 4rem;
-  line-height: 0;
   font-weight: 700;
   font-family: "Roboto Slab", serif;
   margin-right: 2rem;
 `;
+
 const Header = () => {
+  const usuario = false;
   return (
-    <ContenedorHeader>
-      <div>
-        <div>
-          <p>P</p>
+    <header
+      ccs={css`
+        border-bottom: 2px solid var(--gris3);
+        padding: 1 rem 0;
+      `}
+    >
+      <ContenedorHeader>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <Link href="/">
+            <Logo>P</Logo>
+          </Link>
           <Buscar />
           <Nav />
         </div>
-        <div>
-          <p>Hola Cin</p>
-          <button type="button">Cerrar Sesión</button>
-          <Link href="/">Login</Link>
-          <Link href="/">Crear Cuenta</Link>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          {usuario ? (
+            <>
+              <p
+                css={css`
+                  margin-right: 2rem;
+                `}
+              >
+                Hola Cin
+              </p>
+              <Boton type="button" bgColor="true">
+                Cerrar Sesión
+              </Boton>
+            </>
+          ) : (
+            <>
+              <Link href="/login">
+                <Boton
+                  bgColor="true"
+                  css={css`
+                    margin-right: 1rem;
+                  `}
+                >
+                  Login
+                </Boton>
+              </Link>
+              <Link href="/crear-cuenta">
+                <Boton bgColor="true">Crear Cuenta</Boton>
+              </Link>
+            </>
+          )}
         </div>
-      </div>
-    </ContenedorHeader>
+      </ContenedorHeader>
+    </header>
   );
 };
 
