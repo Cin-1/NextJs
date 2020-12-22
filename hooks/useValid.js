@@ -27,12 +27,17 @@ const useValid = (stateInicial, validar, fn) => {
     guardarErrores(erroresvalidacion);
     guardarSubmitform(true);
   };
+  const handleBlur = () => {
+    const erroresvalidacion = validar(valores);
+    guardarErrores(erroresvalidacion);
+  };
   return {
     valores,
     errores,
     submitform,
     handleChange,
     handleSubmit,
+    handleBlur,
   };
 };
 

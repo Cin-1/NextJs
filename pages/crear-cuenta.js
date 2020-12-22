@@ -16,11 +16,14 @@ export default function CrearCuenta() {
     email: "",
     password: "",
   };
-  const { valores, errores, submitform, handleChange, handleSubmit } = useValid(
-    STATE_INICIAL,
-    validarCrearCuenta,
-    CrearCuenta
-  );
+  const {
+    valores,
+    errores,
+    submitform,
+    handleChange,
+    handleSubmit,
+    handleBlur,
+  } = useValid(STATE_INICIAL, validarCrearCuenta, CrearCuenta);
   const { nombre, email, password } = valores;
 
   function CrearCuenta() {
@@ -48,8 +51,10 @@ export default function CrearCuenta() {
                 name="nombre"
                 value={nombre}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
             </Campo>
+            {errores.nombre && <Error>{errores.nombre}</Error>}
             <Campo>
               <label htmlFor="email">Email</label>
               <input
@@ -59,8 +64,11 @@ export default function CrearCuenta() {
                 name="email"
                 value={email}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
             </Campo>
+            {errores.email && <Error>{errores.email}</Error>}
+
             <Campo>
               <label htmlFor="password">Password</label>
               <input
@@ -70,8 +78,11 @@ export default function CrearCuenta() {
                 name="password"
                 value={password}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
             </Campo>
+            {errores.password && <Error>{errores.password}</Error>}
+
             <InputSubmit type="submit" value="Crear Cuenta" />
           </Formulario>
         </>

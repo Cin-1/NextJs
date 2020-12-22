@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import { Global, css } from "@emotion/react";
-import Head from "next/head";
 import Header from "./Header";
+import { Global, css } from "@emotion/core";
+import Head from "next/head";
 
 const Layout = (props) => {
   return (

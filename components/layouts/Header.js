@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Buscar from "../ui/Buscar";
-import Nav from "./Nav";
+import React, { useContext } from "react";
 import Link from "next/link";
-import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
+import Buscar from "../ui/Buscar";
 import Boton from "../ui/Boton";
+import Nav from "./Nav";
 
 const ContenedorHeader = styled.div`
   max-width: 1200px;
