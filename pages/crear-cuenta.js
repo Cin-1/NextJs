@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/Layout";
-import { css } from "@emotion/react";
+import { css } from "@emotion/core";
 import validarCrearCuenta from "../validar/validarCrearCuenta";
 import {
   Formulario,
