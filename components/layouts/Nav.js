@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { FirebaseContext } from "../../firebase";
 
 const Nav = styled.nav`
   padding-left: 2rem;
@@ -16,6 +17,8 @@ const Nav = styled.nav`
 `;
 
 const Navegacion = () => {
+  const { usuario } = useContext(FirebaseContext);
+
   return (
     <Nav>
       <Link href="/">
@@ -24,9 +27,11 @@ const Navegacion = () => {
       <Link href="/populares">
         <a>Populares</a>
       </Link>
-      <Link href="/nuevo-producto">
-        <a>Nuevo producto</a>
-      </Link>
+      {usuario && (
+        <Link href="/nuevo-producto">
+          <a>Nuevo producto</a>
+        </Link>
+      )}
     </Nav>
   );
 };
