@@ -6,7 +6,6 @@ import Buscar from "../ui/Buscar";
 import Boton from "../ui/Boton";
 import Nav from "./Nav";
 import { FirebaseContext } from "../../firebase";
-import { fromBytesLE } from "long";
 
 const ContenedorHeader = styled.div`
   max-width: 1200px;
