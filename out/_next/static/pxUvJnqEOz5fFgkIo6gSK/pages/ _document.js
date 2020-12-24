@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{xGxN:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/ _document",function(){return w("yMzB")}])},yMzB:function(n,o){components,pages,_document.js,index.js,public}},[["xGxN",0]]]);
